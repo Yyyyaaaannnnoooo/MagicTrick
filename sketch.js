@@ -22,6 +22,7 @@ function setup() {
   cnv = createCanvas(innerWidth, innerHeight, WEBGL);
   cnv.parent('p5Sketch');
   noStroke();
+  // ortho();
 }
 
 function draw() {
@@ -32,18 +33,22 @@ function draw() {
   ambientLight(100, 80, 80);
   // pointLight(200, 200, 200, locX, locY, 0);
   normalMaterial();
-
+  let w = 0;
+  let rot_limit = 1;
   if (is_mobile) {
     val = sx;
+    w = width * 0.85;
   } else {
     val = map(mouseX, 0, width, -9, 9);
+    w = width * 0.3;
+    rot_limit = 3;
   }
-
-  let x = map(val, -9, 9, -width * 0.85, width * 0.85);
+  // console.log({val, w, rot_limit});
+  let x = map(val, -9, 9, -w, w);
   if (start) {
     push();
     rotateZ(PI / 2);
-    rotateX(val);
+    rotateX(val / rot_limit);
     cylinder(SIZE, DEPTH, 24, 1, false, false);
     translate(0, x, 0);
     rotateZ(frameCount * SPIN);
