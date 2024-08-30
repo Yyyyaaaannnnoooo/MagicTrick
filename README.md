@@ -1,2 +1,2 @@
-# [THE MAGIC TRICK](http://yyyyyyyy.xyz/MagicTrick/)
+# [THE MAGIC TRICK](https://yyyyaaaannnnoooo.github.io/MagicTrick/)
 
